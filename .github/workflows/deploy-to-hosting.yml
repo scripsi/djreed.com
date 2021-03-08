@@ -1,0 +1,32 @@
+name: deploy website
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout a copy of the repository
+        uses: actions/checkout@master
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: install mkdocs and the material theme
+        run: pip install mkdocs-material
+
+      - name: build the website files
+        run: mkdocs build
+
+      - name: deploy the website to scripsi.uk
+        uses: wangyucode/sftp-upload-action@v1.1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          localDir: "site"
+          remoteDir: ""
