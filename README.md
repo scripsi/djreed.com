@@ -10,7 +10,7 @@ This file just reminds me how things are configured and what to do to run the si
 
 Just edit the index.html file and test locally in a web browser.
 
-The background svg was created in Inkscape, text edited to remove unnecessary styling and then url-encoded on [this site](https://yoksel.github.io/url-encoder/)
+The background svg was created in Inkscape, text edited to remove unnecessary styling, optimised using [SVGOMG](https://jakearchibald.github.io/svgomg/) and then url-encoded on [this site](https://yoksel.github.io/url-encoder/)
 
 The font is subsetted and embedded in the CSS. If you change the text you will have to update the subset. Make sure you have [fonttools](https://github.com/fonttools/fonttools) installed:
 
