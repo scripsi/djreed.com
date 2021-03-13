@@ -12,6 +12,14 @@ Just edit the index.html file and test locally in a web browser.
 
 The background svg was created in Inkscape, text edited to remove unnecessary styling and then url-encoded on [this site](https://yoksel.github.io/url-encoder/)
 
+The font is subsetted and embedded in the CSS. If you change the text you will have to update the subset. Make sure you have [fonttools](https://github.com/fonttools/fonttools) installed:
+
+```shell
+sudo apt install fonttools
+```
+
+ Edit the `dev/font/buildfont` script with the new subset and run it. then copy and paste the text from `dev/font/djreed-font.b64.txt` into `index.html`
+
 ## Committing content
 
 ``` shell
