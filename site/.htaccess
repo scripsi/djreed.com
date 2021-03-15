@@ -1,3 +1,5 @@
 RewriteEngine On
 RewriteCond %{SERVER_PORT} !=443
 RewriteRule ^(.*)$ https://djreed.com/$1 [R=301,L]
+
+Redirect 301 /art/mapping-an-imagined-land/ https://douglasreed.uk/projects/mapping-an-imagined-land/
